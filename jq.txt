@@ -1,0 +1,1 @@
+var price = $('option:selected', this).attr('data-old-price');
