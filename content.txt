@@ -1,0 +1,8 @@
+		$ebookid                 = decrypt($id);
+        $ebook = Ebook::find($ebookid);
+        $path = public_path('uploads/ebooks/'. $ebook->file_name);
+
+        return Response::make(file_get_contents($path), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline'
+        ]);
